@@ -1,0 +1,43 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.form-group {
+    margin-bottom: $space-md;
+
+    label {
+        display: block;
+        margin-bottom: 7px;
+        color: var(--color-text);
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    input,
+    textarea {
+        @include input-style;
+
+        &:focus {
+            border-color: var(--color-primary);
+        }
+    }
+
+    input[type="range"] {
+        padding: 0;
+        accent-color: var(--color-primary);
+        cursor: pointer;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+}
+
+.contact-form {
+    padding: 35px;
+    background-color: var(--color-surface);
+    border-radius: $radius-card;
+
+    .button {
+        width: 100%;
+    }
+}

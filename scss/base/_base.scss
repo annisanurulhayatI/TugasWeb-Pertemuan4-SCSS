@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as *;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+:root {
+    --color-primary: #{$color-primary};
+    --color-primary-dark: #{$color-primary-dark};
+    --color-text: #{$color-text};
+    --color-heading: #{$color-heading};
+    --color-muted: #{$color-muted};
+    --color-background: #{$color-background};
+    --color-surface: #{$color-surface};
+    --color-border: #{$color-border};
+    --color-soft: #{$color-soft};
+    --color-shadow: #{$color-shadow};
+}
+
+.container {
+    width: 90%;
+    max-width: $container-width;
+    margin: 0 auto;
+}

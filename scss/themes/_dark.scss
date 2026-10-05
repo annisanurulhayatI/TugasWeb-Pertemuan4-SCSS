@@ -1,0 +1,36 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: #e6e6f0;
+        --color-heading: #ffffff;
+        --color-muted: #b9b9c9;
+        --color-background: #171720;
+        --color-surface: #20202b;
+        --color-border: #343443;
+        --color-soft: #29294a;
+        --color-shadow: rgba(0, 0, 0, 0.2);
+    }
+
+    .hero {
+        background: linear-gradient(
+            135deg,
+            #20203a 0%,
+            #171720 55%,
+            #18212c 100%
+        );
+    }
+
+    .hero__image img {
+        border-color: var(--color-background);
+    }
+
+    .form-group {
+        input,
+        textarea {
+            border-color: var(--color-border);
+        }
+    }
+
+    .footer {
+        background-color: #101017;
+    }
+}

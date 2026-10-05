@@ -1,0 +1,48 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+
+    &__container {
+        min-height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $space-lg;
+    }
+
+    &__logo {
+        width: 45px;
+        height: 45px;
+        @include flex-center;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+
+.nav {
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        a {
+            color: var(--color-text);
+            font-size: 14px;
+            font-weight: 600;
+            transition: color $transition;
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+    }
+}

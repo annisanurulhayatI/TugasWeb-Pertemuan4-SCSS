@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as *;
+
+.contact {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    align-items: start;
+    gap: 50px;
+
+    &-info {
+        padding: 35px 0;
+
+        h3 {
+            margin-bottom: 12px;
+            color: var(--color-heading);
+            font-size: 24px;
+        }
+
+        > p {
+            margin-bottom: 25px;
+            color: var(--color-muted);
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: $space-md;
+
+            li {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            strong {
+                color: var(--color-text);
+            }
+
+            a {
+                color: var(--color-primary);
+                word-break: break-word;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@for $i from 1 through 4 {
+    .skill-card:nth-child(#{$i}) {
+        order: $i;
+    }
+}
+
+@each $size, $columns in (large: 4, medium: 2, small: 1) {
+    @if $size == large {
+        .skills {
+            grid-template-columns: repeat($columns, minmax(0, 1fr));
+        }
+    }
+}

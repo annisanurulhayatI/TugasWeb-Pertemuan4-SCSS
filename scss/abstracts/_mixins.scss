@@ -1,0 +1,30 @@
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin card-style {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: $radius-card;
+    box-shadow: 0 10px 30px var(--color-shadow);
+}
+
+@mixin input-style {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dddddf;
+    border-radius: 8px;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+@mixin responsive($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}

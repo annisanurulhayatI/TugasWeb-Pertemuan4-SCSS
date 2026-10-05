@@ -1,0 +1,101 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.about {
+    max-width: 850px;
+    padding: 35px;
+    @include card-style;
+
+    p {
+        margin-bottom: 15px;
+        color: var(--color-muted);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.education {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $space-md;
+
+    &-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 25px;
+        padding: $space-lg;
+        @include card-style;
+
+        &:first-child {
+            grid-column: 1 / -1;
+        }
+
+        &__icon {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+            @include flex-center;
+            border-radius: 15px;
+            background-color: var(--color-soft);
+            font-size: 28px;
+        }
+
+        &__content {
+            h3 {
+                margin-bottom: $space-xs;
+                color: var(--color-heading);
+                font-size: 23px;
+            }
+
+            p {
+                color: var(--color-muted);
+            }
+        }
+
+        &__major {
+            margin-bottom: $space-sm;
+            color: var(--color-primary) !important;
+            font-weight: bold;
+        }
+
+        &__status {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background-color: var(--color-soft);
+            color: var(--color-primary-dark) !important;
+            font-size: 13px;
+            font-weight: bold;
+        }
+    }
+}
+
+.skill-card {
+    padding: $space-lg;
+    @include card-style;
+    transition: $transition;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(50, 50, 80, 0.1);
+    }
+
+    &__icon {
+        margin-bottom: 15px;
+        font-size: 32px;
+    }
+
+    h3 {
+        margin-bottom: $space-sm;
+        color: var(--color-heading);
+        font-size: 20px;
+    }
+
+    p {
+        color: var(--color-muted);
+        font-size: 14px;
+    }
+}
